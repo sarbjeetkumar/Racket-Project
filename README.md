@@ -22,7 +22,7 @@
 
 ```
 
-## Getting Started
+### Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
 
@@ -41,7 +41,7 @@ Or here is the video tutorial how to install [DR Racket](https://www.youtube.com
 
 
 
-## Running the tests
+### Running the tests
 
 Explain how to run the automated tests for this system
 
@@ -61,29 +61,37 @@ Explain what these tests test and why
 Give an example
 ```
 
-## Deployment
+### Deployment
 
 Add additional notes about how to deploy this on a live system
 
 
-## Built With
+### Built With
 
 * [Racket](https://download.racket-lang.org/) - Racket 
 
 
 
-## Versioning
+### Versioning
 
 Version 6.8 [January 2017](https://download.racket-lang.org/)
 
 
-## Authors
+### Authors
 
 * **Sarabjeet** 
 
 
-## License
+### License
 
 This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/sarbjeetkumar/Racket-Project/blob/master/LICENSE) file for details
+
+
+
+### For extra information about the Project please refer to the repository Wiki.
+
+[Wiki](https://github.com/sarbjeetkumar/Racket-Project/wiki)
+
+
 
  
