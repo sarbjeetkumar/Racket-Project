@@ -1,0 +1,35 @@
+#lang racket
+
+;creates the list
+(define l (list 3 4 '+))
+
+;get all the combination of 3,4 ,+
+(permutations (list 3 4 '+))
+
+;cartesian-product of ary  
+(cartesian-product (permutations (list 3 4 '+)))
+
+;remove the duplicates
+(remove-duplicates(cartesian-product (permutations (list 3 4 '+))))
+
+;(define (map -rpn -1)
+ ; (append (list 1 1) l (list -1)))
+
+  ;(map make -rpn x)
+  ;(map -rpn(car x))
+
+   ;(define (valid -rpn? e[s 0])
+    ; (if(null ?e)
+     ;   (if(=s 1) #t #f)
+      ;  (if(=(car e) 1)
+       ;    (valid -rpn?(cdr e) (+ 1 s ))
+        ;   (#f))))
+         ;    (valid -rpn?(cdr e) (- 1 s ))
+
+
+(define (valid-rpn? e[s 0])
+  (if(null? e)
+     (if( = s 1)  #t #f)
+     (if(number? (car e) )
+        (valid-rpn?(cdr e) (+ 1 s ))
+        (valid-rpn?(cdr e) (- 1 s )))))
