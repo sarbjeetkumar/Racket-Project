@@ -3,10 +3,15 @@
 ##  Professor - Dr IAN McLOUGHLIN
 
 
-### CountDown number game where user can give program some random numbers and target number and program have to figure out final number by using (+-*/) operators .
+#### Student Name - Sarabjeet Kumar
+#### GNumber - G00305450
+#### The project is made for as a part of college work , Module  THEORY OF ALGORITHMS.
 
-## Here is small example of it in action .  In this instance, one number was selected from the large set, and the rest from the small set.
+#### CountDown number game where user can give program some random numbers and target number and program have to figure out final number by using (+-*/) operators .
 
+#### Here is small example of it in action .  In this instance, one number was selected from the large set, and the rest from the small set.
+
+```
   { 50 , 8 , 3 , 7 , 2 , 10 }
   
   The randomly selected target was 556.
@@ -15,7 +20,7 @@
   
   (50 × 10) + (8 × 7) = 556
 
-
+```
 
 ## Getting Started
 
