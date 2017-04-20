@@ -26,27 +26,20 @@
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
 
-Download and extract the zip folder here[Racket-Project](https://github.com/sarbjeetkumar/Racket-Project/archive/master.zip)
+Download and extract the zip folder here [Racket-Project](https://github.com/sarbjeetkumar/Racket-Project/archive/master.zip)
 
 ### Prerequisites
 
-Dr Racket. You can download here[Dr Racket](https://download.racket-lang.org/)
+Dr Racket. You can download here [Dr Racket](https://download.racket-lang.org/)
 
-```
-Give examples
-https://download.racket-lang.org/
-
-```
 
 ### Installing
 
-A step by step series of examples that tell you have to get a development envrunning
+Once you have downloaded the executable file click on it and it will automatic guide you for installation.
 
-Say what the step will be
+Or here is the video tutorial how to install [DR Racket](https://www.youtube.com/watch?v=UOqcLGGKVr8) on your machine. 
 
-```
-Give the example
-```
+
 
 And repeat
 
