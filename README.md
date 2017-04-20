@@ -41,14 +41,6 @@ Or here is the video tutorial how to install [DR Racket](https://www.youtube.com
 
 
 
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
 ## Running the tests
 
 Explain how to run the automated tests for this system
@@ -73,15 +65,16 @@ Give an example
 
 Add additional notes about how to deploy this on a live system
 
+
 ## Built With
 
-* 
 * [Racket](https://download.racket-lang.org/) - Racket 
 
 
 
 ## Versioning
 
+Version 6.8 [January 2017](https://download.racket-lang.org/)
 
 
 ## Authors
@@ -89,13 +82,8 @@ Add additional notes about how to deploy this on a live system
 * **Sarabjeet** 
 
 
-
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](MIT) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/sarbjeetkumar/Racket-Project/blob/master/LICENSE) file for details
 
-## Acknowledgments
-
-* Who's code was used
-* Inspiration
-* 
+ 
