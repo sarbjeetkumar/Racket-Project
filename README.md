@@ -7,7 +7,7 @@
 #### GNumber - G00305450
 #### The project is made for as a part of college work , Module  THEORY OF ALGORITHMS.
 
-#### CountDown number game where user can give program some random numbers and target number and program have to figure out final number by using (+-*/) operators .
+#### CountDown number game where user can give program some random numbers and target number and program have to figure out target number by using (+ - * / ) operators .
 
 #### Here is small example of it in action .  In this instance, one number was selected from the large set, and the rest from the small set.
 
