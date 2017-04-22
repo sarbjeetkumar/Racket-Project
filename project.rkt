@@ -61,5 +61,72 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;I got this polish notation finction from source : https://rosettacode.org/wiki/Parsing/RPN_calculator_algorithm#Racket
+
+
+(define (calculate-RPN expr)
+  (for/fold ([stack '()]) ([token expr])
+    (printf "~a\t -> ~a~N" token stack) ; Uncomment to see workings, not recommended for long lists.
+    (match* (token stack)
+     [((? number? n) s) (cons n s)]
+     [('+ (list x y s ___)) (cons (+ x y) s)]
+     [('- (list x y s ___)) (cons (- y x) s)]
+     [('* (list x y s ___)) (cons (* x y) s)]
+     [('/ (list x y s ___)) (cons (/ y x) s)]
+     [('^ (list x y s ___)) (cons (expt y x) s)]
+     [(x s) (error "calculate-RPN: Cannot calculate the expression:" 
+                   (reverse (cons x s)))])))
+
+
+;;My understanding of this fuction is it takes a list and start adding it to a
+;stack and every time it check if it a number add to stack if it is a operand perform
+;the calculations according to operand , thats how its working i showed down .
+
+;        (define a (list 1 2 3 '+ ' -))
+;         > (calculate-RPN a)
+;              1	 -> ()
+;              2	 -> (1)
+;              3	 -> (2 1)
+;              +	 -> (3 2 1)
+;              -	 -> (5 1)
+;              '(-4)
+
+;Above i declare a list with the 3 number and two operands and its works fine
+;because it works out always a valid polish notation . When the stack is left
+;with -4 only it terminates .
+
+;(define a (list 1 2 3 '+ ' - '*))
+    
+;> (calculate-RPN a)
+;1	 -> ()
+;2	 -> (1)
+;3	 -> (2 1)
+;+	 -> (3 2 1)
+;-	 -> (5 1)
+;*	 -> (-4)
+
+;;calculate-RPN: Cannot calculate the expression: (-4 *)
+
+;Above i created a same list called a and pass it to calculaet RPN number and it worked 
+;up until we have -4 on the stack but when we pulled * from the stack it throw error
+;because it can't resolved a number and a operator ,so operand always should be 1 less than number .
+
+
+;This function which calculates if the expression is in valid "Reverse polish notation"
+;or not for more about reverse polish notation please check the documentation
+;on wiki . Some of the code was given in the class by Professor and some i eddited
+;from my side to make it working .
+
+(define (valid-rpn? e [s 0])        ; define the function valid-rpn                                                                         
+  (if(null? e)                      ; checks if the list is empty                                                          
+     (if (= s 1)  #t #f)            ; checks if the stack is equal to 1                                                            
+     (if(number? (car e))           ;if its a number car of e
+        (valid-rpn? (cdr e) (+ s 1)); add 1 to the stack (recursion add second number to the stack)
+        (if(> s 1)                  ; if the stack is greater than 1 
+           (valid-rpn? (cdr e) (- s 1))#f)))) ; it takes the rest of the list and removes 1 from the stack
+           
+
+
+
 
 
