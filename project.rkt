@@ -1,7 +1,10 @@
 #lang racket
 
 ;how to create a list with two number's
-(define l (list 3 4 5 6 '+ ))
+(define l (list 3 4 5 6 ))
+
+;Make a another list for operands first start with three 
+(define oper (list '+ '- '*))
 
 ;car funtion - car function gives the first element of the list
 (car l)
