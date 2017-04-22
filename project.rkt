@@ -57,7 +57,7 @@
 ;(flatten) Function -> Flattens an arbitrary S-expression structure of pairs into a list.
 (flatten '((a) b (c (d) . e) ()))
 ;'(a b c d e)
-;put a ' in front of list and make it in one list.
+; Make it in one list.
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -124,9 +124,23 @@
         (valid-rpn? (cdr e) (+ s 1)); add 1 to the stack (recursion add second number to the stack)
         (if(> s 1)                  ; if the stack is greater than 1 
            (valid-rpn? (cdr e) (- s 1))#f)))) ; it takes the rest of the list and removes 1 from the stack
-           
+
+
+;To check this function i made up some dummy list
+; first with the 2 number and 1 operator to see whats printing ?
+;(valid-rpn? (list 1 2 +))
+;#t
+;above i made a valid list and it has given me #t which is true .
+
+;Now i going to make a list which is not a valid
+;(valid-rpn? (list 1 2 +  - ))
+;#f
+;the list above has 2 numbers and two operators so it's won't work out thats why
+;it has printed a false because its not a valid expression
 
 
 
 
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;create a another function to make some calculation
