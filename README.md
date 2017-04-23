@@ -18,8 +18,9 @@
   
   There are multiple ways to solve this. The smallest solution requires just four numbers:
   
-  (50 × 10) + (8 × 7) = 556
-
+  (8 7 * 50 10 * +) = 556 (Through Reverse Polish Notation)
+  
+  
 ```
 
 ## Getting Started
