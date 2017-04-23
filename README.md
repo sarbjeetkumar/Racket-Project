@@ -62,7 +62,7 @@ Version 6.8 [January 2017](https://download.racket-lang.org/)
 
 ## Authors
 
-* **Sarabjeet** 
+[Sarabjeet Kumar](https://github.com/sarbjeetkumar)
 
 
 ## License
