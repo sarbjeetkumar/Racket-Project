@@ -143,4 +143,18 @@
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;create a another function to make some calculation
+;added a random fuction for random number genrator
+
+(define (test-func) (for ([i 5])
+       (displayln (random 20))))
+
+
+
+
+
+
+
+
+
+
+
