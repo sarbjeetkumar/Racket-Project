@@ -41,29 +41,12 @@ Or here is the video tutorial how to install [DR Racket](https://www.youtube.com
 
 
 
-## Running the tests
 
-Explain how to run the automated tests for this system
 
-## Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+File menu from DrRacket ----> Hit the open ------>  select.rkt file from file Explorer 
 
 
 ## Built With
