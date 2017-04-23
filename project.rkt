@@ -4,7 +4,7 @@
 (define l (list 3 4 5 6 ))
 
 ;Make a another list for operands first start with three 
-(define oper (list '+ '- '*))
+(define op (list '+ '+ '+ '+ '+ '- '- '- '- '- '* '* '* '* '* '/ '/ '/ '/ '/))
 
 ;car funtion - car function gives the first element of the list
 (car l)
@@ -58,22 +58,27 @@
 (flatten '((a) b (c (d) . e) ()))
 ;'(a b c d e)
 ; Make it in one list.
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;I got this polish notation finction from source : https://rosettacode.org/wiki/Parsing/RPN_calculator_algorithm#Racket
+;Creates static list of numbers and operators
+(define f null)
+
+
+
+
+;I got this  function from source : https://rosettacode.org/wiki/Parsing/RPN_calculator_algorithm#Racket
 
 
 (define (calculate-RPN expr)
   (for/fold ([stack '()]) ([token expr])
-    (printf "~a\t -> ~a~N" token stack) ; Uncomment to see workings, not recommended for long lists.
+   (printf "~a\t -> ~a~N" token stack) ; Uncomment to see workings, not recommended for long lists.
     (match* (token stack)
      [((? number? n) s) (cons n s)]
      [('+ (list x y s ___)) (cons (+ x y) s)]
      [('- (list x y s ___)) (cons (- y x) s)]
      [('* (list x y s ___)) (cons (* x y) s)]
-     [('/ (list x y s ___)) (cons (/ y x) s)]
-     [('^ (list x y s ___)) (cons (expt y x) s)]
+     [('/ (list x y s ___)) (if (= y 0) (cons 0 s)
+                                (if (= x 0) (cons 0 s)
+                                    (cons (/ x y) s)))]
      [(x s) (error "calculate-RPN: Cannot calculate the expression:" 
                    (reverse (cons x s)))])))
 
@@ -145,16 +150,51 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;added a random fuction for random number genrator
 
-(define (test-func) (for ([i 5])
-       (displayln (random 20))))
+(define (rand-func) (for ([i 1])
+       (displayln (random 80))))
+
+;to get the random number between  1 to 80.
 
 
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;Define the cal func
+(define (cal x t) ; x is a  list and t is a targer number given by user 
+  ;if list x = 0 its skip all that code 
+  (if (null? x) 0
+      ;if and else 
+      (cond [(valid-rpn? (car x))
+             (cond [(eqv? (car (calculate-RPN (car x))) t);eqv ? is a equals to target number 
+                    (writeln (car x)) (writeln t)];write line writes on the console 
+                   [else (cal (cdr x) t)])];it moves to next list of number its not valid 
+            [else (cal (cdr x) t)])));two conditions
 
 
 
+;l is the list , ( s is a new stack and you put 2 into it ) and g is empty list
+(define (mklist l (s 2) (g null));
+  ;like if condition is s less than or equal to length of l
+  (cond ((<= s (length l))
+         ;making all combinatoins of l and puting the operator and appending to when you have all the combinations number of combination depends on size of s
+         (mklist l (+ s 1)
+                 (append g (cartesian-product (combinations l s) (remove-duplicates(combinations op (- s 1)))))))
+        (else  g)));when is s is bigger length of l it return
 
 
 
+;l is the orignal list we create in begin t is a target number 
+(define (rpn l t)
+  (set! f (mklist l)) (makep f t));set f to be make list of l ; what g will be
+
+;;define  makep l and t is a target number 
+(define (makep l t)
+  (cond [(null? l) (write 'Target:) t]
+      [else (cal (permutations (flatten (car l))) t)(makep (cdr l) t)]))
+
+
+
+"For running"
+"cal rpn and give numbers and target number "
+"(rpn (list 2 3 6) 20)  "
 
 
